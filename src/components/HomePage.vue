@@ -18,12 +18,12 @@
             <section class="blog-section banting">
                 <h2>Banting</h2>
                 <p>I am a huge fan of Prof Noakes. This way of eating is the only way I will be healthy enough to run a marathon in my eighties - and that is precisely what I aim to do. I also love tinkering around in my kitchen, making up new Banting concoctions, and knocking everyone’s socks off with Banting deliciousness. I want to be buried with piles of butter, cream, cheese and red wine, just in case…</p>
-                <router-link to="/banting">Let's bant, bitches</router-link>
+                <router-link to="/banting">Let's Bant, Bitches</router-link>
             </section>
             <section class="blog-section photography">
                 <h2>Photography</h2>
                 <p>If I had my life over again I would train to be a photographer. I am a running, Banting, wine drinking, wannabe photographer. I like to cycle in my spare time with a camera in my backpack, spend hours editing my pics and then I share them here.</p>
-                <router-link to="/photography">See me snaps</router-link>
+                <router-link to="/photography">See Me Snaps</router-link>
             </section>
         </div>
         
