@@ -6,3 +6,4 @@ const cmd = `./node_modules/s3-deploy/.bin/s3-deploy './dist/**' --cwd './dist/'
 exec(cmd, function(error, stdout, stderr) {
   console.log(stdout);
 });
+

@@ -1,7 +1,7 @@
 <template>
     <div class="post-component">
-    <h1 v-html="post.title"></h1>
-    <p class="post-date">{{ formatted_date }}</p>
+    <h1 v-html="post.title" class="centered heading-text post-post-title"></h1>
+    <p class="post-date centered">{{ formatted_date }}</p>
     <article class="article-body" v-html="post.content"></article>
     </div>
 </template>
@@ -62,12 +62,20 @@
     }
 </script>
 
-<style>
+<style lang="scss">
+    .post-post-title {
+        font-size: 2.5em;
+    }
+
     .article-body {
         max-width: 800px;
         width: 95%;
         margin: 2em auto;
         text-align: left;
+    }
+
+    .article-body * {
+        max-width: 100%;
     }
 
     img {

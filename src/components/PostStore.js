@@ -8,8 +8,13 @@ export default {
 
     fetchPosts() {
         axios.get(`${baseUrl}?number=100,fields=ID,terms,slug,date,title,excerpt,content`)
-                .then(({data}) => this.posts = data.posts)
+                .then(({data}) => this.setPosts(data.posts))
                 .catch(err => console.log(err.response));
+    },
+
+    setPosts(posts) {
+        this.posts = posts;
+        eventHub.$emit('posts-loaded');
     },
 
     getCategoryPosts(category) {

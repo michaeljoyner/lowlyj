@@ -7,6 +7,7 @@ import Post from '@/components/Post'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -37,5 +38,12 @@ export default new Router({
       component: Post,
       props: true
     }
-  ]
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    if(savedPosition) {
+      return savedPosition;
+    } else {
+      return {x: 0, y: 0};
+    }
+  }
 })
