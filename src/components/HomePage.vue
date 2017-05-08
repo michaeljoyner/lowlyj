@@ -12,17 +12,17 @@
         <div class="card-lot">
             <section class="blog-section running">
                 <h2>Running</h2>
-                <p class="centered">I run at the back of the pack. I can engage tortoise gear and keep going for hours on end. Unfortunately this is not enough if one wants to sport that Holy Grail of South African running medals - the Comrades medal. No, to do that one needs a dash of speed, one needs to run on that thin red line, bleeding from the eyeballs. No, I’m kidding…but that’s what it feels like and I know that I am not ready to embrace that level of pain yet. In the meantime I’m having fun, keeping fit and dreaming big.</p>
+                <p class="centered">I run at the back of the pack in tortoise gear. Unfortunately this is not enough if one wants to sport that Holy Grail of South African running medals - the Comrades medal. No, to do that one needs a dash of speed, one needs to run on that thin red line, bleeding from the eyeballs. In the meantime I’m having fun, keeping fit and dreaming big.</p>
                 <router-link to="/running" class="centered">Hit The Road</router-link>
             </section>
             <section class="blog-section banting">
                 <h2>Banting</h2>
-                <p class="centered">I am a huge fan of Prof Noakes. This way of eating is the only way I will be healthy enough to run a marathon in my eighties - and that is precisely what I aim to do. I also love tinkering around in my kitchen, making up new Banting concoctions, and knocking everyone’s socks off with Banting deliciousness. I want to be buried with piles of butter, cream, cheese and red wine, just in case…</p>
+                <p class="centered">I Bant and Prof Noakes is my hero. This way of eating is the only way I will be healthy enough to run a marathon in my eighties - and that is precisely what I aim to do. I also love tinkering around in my kitchen, making up new Banting concoctions, and knocking everyone’s socks off with Banting deliciousness.</p>
                 <router-link to="/banting" class="centered">Let's Bant, Bitches</router-link>
             </section>
             <section class="blog-section photography">
                 <h2>Photography</h2>
-                <p class="centered">If I had my life over again I would train to be a photographer. I am a running, Banting, wine drinking, wannabe photographer. I like to cycle in my spare time with a camera in my backpack, spend hours editing my pics and then I share them here.</p>
+                <p class="centered">I am a running, Banting, wine drinking, wannabe photographer. I live in one of the most beautiful parts of the world and I like to cycle in my spare time with a camera in my backpack. Oh and I love my dogs - and everyone else's dogs too! Indulge me - I love tinkering with my pictures for hours and showing them off here.</p>
                 <router-link to="/photography" class="centered">See Me Snaps</router-link>
             </section>
         </div>

@@ -65,6 +65,9 @@
 <style lang="scss">
     .post-post-title {
         font-size: 2.5em;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto; 
     }
 
     .article-body {
@@ -84,5 +87,11 @@
         display: block;
         margin: 1em auto;
         border: none;
+    }
+
+    @media (max-width: 500px) {
+        .post-post-title {
+            font-size: 2em;
+        }
     }
 </style>
