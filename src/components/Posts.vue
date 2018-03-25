@@ -1,99 +1,95 @@
 <template>
-    <div class="post-listing centered">
-        <h1 class="page-title heading-text">{{ category }}</h1>
+    <div class="max-w-md lg:max-w-lg mx-auto px-4 lg:px-0 md:text-lg">
+        <h1 class="text-5xl uppercase font-sans my-12 text-center">{{ category }}</h1>
         <div class="loader" v-show="!posts.length"></div>
-        <div v-for="post in posts" class="post">
-            <router-link :to="`/post/${post.slug}`">
-                <h2 v-html="post.title" class="heading-text"></h2>
+        <div v-for="post in posts" class="my-12">
+            <router-link :to="`/post/${post.slug}`" class="no-underline">
+                <h2 v-html="post.title" class="mb-1 text-grey-darkest hover:text-primary"></h2>
             </router-link>
-            <p class="post-date"><span>{{ formatted_date(post) }}</span></p>
-            <div class="body" v-html="post.excerpt">
+            <p class="post-date mb-4 mt-2 text-grey-dark"><span>{{ formatted_date(post) }}</span></p>
+            <div class="leading-normal excerpt" v-html="post.excerpt">
             </div>
         </div>
     </div>
 </template>
 
 <script>
-    import axios from 'axios';
-    import moment from 'moment';
+import axios from "axios";
+import moment from "moment";
 
-    export default {
-        name: 'posts',
+export default {
+  name: "posts",
 
-        props: ['category'],
+  props: ["category"],
 
-        data() {
-            return {
-                posts: [],
-                baseUrl: 'https://public-api.wordpress.com/rest/v1.1/sites/lowlyj.wordpress.com/posts/'
-            }
-        },
+  data() {
+    return {
+      posts: [],
+      baseUrl:
+        "https://public-api.wordpress.com/rest/v1.1/sites/lowlyj.wordpress.com/posts/"
+    };
+  },
 
-        created() {
-            eventHub.$on('posts-loaded', () => this.getPosts());
-        },
+  created() {
+    eventHub.$on("posts-loaded", () => this.getPosts());
+  },
 
-        mounted() {
-            this.getPosts();
-        },
+  mounted() {
+    this.getPosts();
+  },
 
-        beforeRouteEnter(to, from, next) {
-            next(vm => {vm.getPosts()});
-        },
+  beforeRouteEnter(to, from, next) {
+    next(vm => {
+      vm.getPosts();
+    });
+  },
 
-        // beforeRouteUpdate(to, from, next) {
-        //     console.log('joo');
-        //     console.log(this.ctaegory);
-        //     next();
-        // },
+  // beforeRouteUpdate(to, from, next) {
+  //     console.log('joo');
+  //     console.log(this.ctaegory);
+  //     next();
+  // },
 
-        methods: {
-            getPosts() {
-                // axios.get(`${this.baseUrl}?category=${this.category}&fields=ID,terms,slug,date,title,excerpt,content`)
-                // .then(({data}) => this.posts = data.posts)
-                // .catch(err => console.log(err.response));
-                this.posts = this.$parent.store.getCategoryPosts(this.category);
-            },
+  methods: {
+    getPosts() {
+      // axios.get(`${this.baseUrl}?category=${this.category}&fields=ID,terms,slug,date,title,excerpt,content`)
+      // .then(({data}) => this.posts = data.posts)
+      // .catch(err => console.log(err.response));
+      this.posts = this.$parent.store.getCategoryPosts(this.category);
+    },
 
-            formatted_date(post) {
-                return moment(post.date).format("dddd, MMMM Do YYYY");
-            }
-        }
+    formatted_date(post) {
+      return moment(post.date).format("dddd, MMMM Do YYYY");
     }
+  }
+};
 </script>
 
-<style scoped>
-    .page-title {
-        font-size: 48px;
-        text-transform: uppercase;
-    }
+<style>
+.excerpt a {
+  color: #fd5e53;
+}
+</style>
 
-    .post-listing {
-        width: 95%;
-        margin: 0 auto;
-        max-width: 800px;
-    }
 
-    .post-listing a {
-        text-decoration: none;
-        color: #333;
-    }
+<style scoped lang="css" type="text/css">
+.post-listing {
+  width: 95%;
+  margin: 0 auto;
+  max-width: 800px;
+}
 
-    .post-listing a:hover {
-        color: #fd5e53;
-    }
+.post-date span {
+  border-bottom: 2px solid #fd5e53;
+}
 
-    .post-date span {
-        border-bottom: 2px solid #fd5e53;
-    }
+@media (max-width: 500px) {
+  .post-listing {
+    text-align: left;
+  }
+}
 
-    @media (max-width: 500px) {
-        .post-listing {
-            text-align: left;
-        }
-    }
-
-    .loader,
+.loader,
 .loader:before,
 .loader:after {
   background: #fd5e53;
@@ -118,7 +114,7 @@
 .loader:after {
   position: absolute;
   top: 0;
-  content: '';
+  content: "";
 }
 .loader:before {
   left: -1.5em;
